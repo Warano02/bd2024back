@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: rgb(0, 166, 255);
+    --max-h: 41.5em;
+    --danger-primary: rgb(167, 2, 2);
+    --danger-second: rgba(180, 18, 18, 0.941);
+    --nav-bg: #9bbbaf;
+}
+
+body {
+    display: flex;
+    overflow: hidden;
+    gap: 1em;
+}
+.disable{
+    display: none;
+}
+.test{
+    opacity: 0.2;
+}
+nav {
+    width: 29em;
+    height: var(--max-h);
+    background: var(--nav-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5em;
+}
+
+nav .back {
+    width: 30px;
+    height: 30px;
+    background: #b0d9ca;
+    border-radius: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1em;
+    left: 1px;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav .back:hover {
+    background: #9ddec6ea;
+}
+
+nav h1 {
+    margin: 1em 0;
+    font-size: 3em;
+    color: aliceblue;
+    text-decoration: underline;
+
+}
+
+nav form {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+nav form label {
+    width: 95%;
+    text-align: center;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color:#000;
+}
+
+nav form textarea {
+    width: 100%;
+    height: 15em;
+    resize: none;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    outline: none;
+    padding: 2px;
+    margin-bottom: 1em;
+}
+
+nav form button {
+    width: 15em;
+    height: 2.5em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgb(10, 232, 176);
+    font-weight: bold;
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+nav form button:hover {
+    border: 2px solid rgb(10, 232, 176);
+    height: 3em;
+    font-size: 1em;
+    background: none;
+}
+
+main {
+    width: 65em;
+    height: 45.5em;
+    background: #f4f4f4f4;
+    border: 1px dashed rgb(189, 184, 184);
+    position: relative;
+}
+
+main .tete {
+    width: 100%;
+    height: 12em;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+main .tete .left,
+main .tete .right {
+    width: 18em;
+    height: 100%;
+    margin: 1em;
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* background: #000; */
+}
+
+main .tete .right h1 {
+    width: 90%;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+main .data {
+    width: 99%;
+    margin-left: 5px;
+    height: 20em;
+    /* background: #000; */
+    position: relative;
+}
+
+main .data h1 {
+    margin: 1em;
+}
+
+main .data h1 span {
+    text-decoration: underline;
+}
+
+main .data {
+    padding: 0.5em;
+}
+
+main .data h2 {
+    margin-bottom: 0.5em;
+}
+
+main .data .si {
+    width: 20em;
+    height: 5em;
+    /* background: #5a5a5a; */
+    position: absolute;
+    right: 1em;
+    bottom:-5.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.openai,
+.chat-div {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.openai {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+}
+
+.openai:hover,
+.openai:hover .openai::after,
+.chat-div .area .close:hover {
+    background: rgb(3, 112, 171);
+}
+
+.openai::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: -5px;
+    right: -3px;
+}
+
+.chat-div {
+    cursor: initial;
+    bottom: 2em;
+    right: 6.5em;
+    height: 30em;
+    width: 25em;
+    border-radius: 5px;
+    background: none;
+}
+
+.chat-div .area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.chat-div .area .close {
+    width: 2em;
+    height: 1.5em;
+    background: rgb(0, 217, 255);
+    border-radius: 30%;
+    right: 0;
+    top: -1.5em;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: var(--danger-primary);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.chat-div .area .data {
+    width: 100%;
+    height: 28em;
+    background: #f1efef;
+    margin-top: 2em;
+    position: relative;
+}
+
+.chat-div .area .data .messages {
+    width: 100%;
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+   overflow: scroll;
+   overflow-x: hidden;
+    position: relative;
+}
+
+.chat-div .area .data .messages .message {
+    width: 90%;
+    min-height: 5em;
+    padding: 10px;
+    display: flex;
+    position: relative;
+}
+
+.chat-div .area .data .messages .message p {
+    background: var(--primary-color);
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    color: #f4f4f4f4;
+}
+
+.chat-div .area .data .messages .question p {
+    margin-left: 5em;
+    width: 80%;
+    border-radius: 10px 10px 1px 10px;
+    background: rgb(4, 4, 141);
+}
+
+.chat-div .area .data .messages .message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.chat-div .area .data .messages .header img {
+    width: 2em;
+    height: 2em;
+}
+
+.chat-div .area .data form {
+    width: 100%;
+    height: 2.5em;
+    position: relative;
+    display: flex;
+
+}
+
+.chat-div .area .data form textarea {
+    width: 90%;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    resize: none;
+    border-radius: 5px;
+}
+
+.chat-div .area .data form button {
+    width: 10%;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.chat-div .area .data form button:hover {
+    background: var(--primary-color);
+    color: white;
+}

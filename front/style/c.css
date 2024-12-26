@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #e7e2e2; */
+    background: #585555c9;
+  }
+  header {
+    position: absolute;
+    top: 20%;
+    font-size: 30px;
+    color: #fff;
+    width: 500px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+  }
+  header span {
+    color: aliceblue;
+    scale: 1.02;
+  }
+  main {
+    position: absolute;
+    top: 40%;
+    width: 550px;
+    height: 220px;
+    display: flex;
+    justify-content: left;
+  }
+  main input {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 1px solid whitesmoke;
+    outline: none;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: #0c3a9e;
+  }
+  main input:focus {
+    width: 105px;
+    height: 105px;
+    scale: 1.01;
+  }
+  .active {
+    border: 1.5px solid rgb(51, 226, 65);
+    color: rgb(51, 226, 65);
+    box-shadow: 2px -2px 20px 4px rgb(51, 226, 65);
+    animation: animation 3s ease-in-out infinite;
+    -webkit-animation: animation 3s ease-in-out infinite;
+  }
+  
+  ::placeholder {
+    opacity: 0.2;
+  }
+  
+  @media screen and (max-width: 580px) {
+    header {
+      left: 15%;
+      font-size: 20px;
+    }
+    main {
+      left: 20%;
+    }
+    main input {
+      width: 90px;
+      height: 90px;
+    }
+    main input:focus {
+      width: 95px;
+      height: 95px;
+    }
+  }
+  
+  @keyframes animation {
+    from {
+      box-shadow: 2px -2px 20px 4px rgb(51, 226, 65);
+    }
+    to {
+      box-shadow: 2px -2px 20px 7px rgb(51, 226, 65);
+    }
+  }
+  
