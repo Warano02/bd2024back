@@ -2,16 +2,17 @@ import { Aurl } from "../../backend/security/api.js";
 
 let champ = document.getElementById("email");
 let code = sessionStorage.getItem("code");
-let Form=JSON.parse(sessionStorage.getItem("data"))
-let nom=Form.name
+let Form = JSON.parse(sessionStorage.getItem("data"));
+let nom = Form.name;
 champ.textContent = sessionStorage.getItem("email");
 let Input = document.querySelectorAll("input");
-let i = 0,
-  o = "";
-const t = setInterval(() => {
-  if (i == 5) {
-    if (o == code) {
-      // clearInterval(t);  
+let o = "";
+
+// Fonction pour vérifier le code
+function checkCode() {
+  if (o.length === 5) { // Vérifie si tous les inputs sont remplis
+    if (!isNaN(o) && !isNaN(code) && parseInt(o) === parseInt(code)) {
+      // Envoi de la requête pour le message de bienvenue
       const t = new XMLHttpRequest();
       t.open("POST", "../../../backend/log/sign.php", true);
       t.setRequestHeader("Content-Type", "application/json");
@@ -29,21 +30,16 @@ const t = setInterval(() => {
             xhr.onload = () => {
               if (xhr.status === 201) { 
                 alert("Success !🥳✅");
-                window.location.href="../t.php"    
+                window.location.href = "../t.php";    
               } else {
-                load.classList.add("disable");
-                alert("Erreur lors de l'envoie de votre message de bienvenue!");
-                window.location.href="../t.php"    
+                alert("Erreur lors de l'envoi de votre message de bienvenue!");
+                window.location.href = "../t.php";    
               }
             };
             xhr.send();
           } else {
             alert(tt.msg);
           }
-        } else {
-          alert(
-            "Une erreur est survenue lors de l'envoi de votre demande d'inscription !"
-          );
         }
       };
 
@@ -51,33 +47,43 @@ const t = setInterval(() => {
 
     } else {
       alert("Code de confirmation incorrect !");
-      for (; i >= 0; i--) {
-        Input[i].value = "";
-        Input[i].setAttribute("disable", false);
-      }
-      for (i = 2; i <= 5; i++) {
-        Input[i].setAttribute("disabled", true);
-      }
-      // window.location.reload;
-      Input[0].classList.add("active")
-      Input[0].removeAttribute("disabled")
-      Input[0].focus()
-      code=""
-    }
-    i = 0;
-  } else {
-    let imput = Input[i];
-    if (imput.value.length == 1 && !isNaN(imput.value)) {
-      i++;
-      o += imput.value;
-      imput.classList.remove("active");
-      imput.setAttribute("disabled", true);
-      const next = Input[i];
-      next.classList.add("active");
-      next.removeAttribute("disabled");
-      next.focus()
-    } else {
-      imput.value = "";
+      resetInputs();
     }
   }
-}, 100);
+}
+
+// Fonction pour réinitialiser les inputs
+function resetInputs() {
+  o = ""; // Réinitialiser la chaîne de code
+  Input.forEach((input) => {
+    input.value = "";
+    input.removeAttribute("disabled");
+    input.classList.remove("active");
+  });
+  Input[0].classList.add("active");
+  Input[0].focus();
+}
+
+// Écoute des événements de saisie sur chaque input
+Input.forEach((input, index) => {
+  input.addEventListener("input", (event) => {
+    if (event.target.value.length === 1 && !isNaN(event.target.value)) {
+      o += event.target.value; // Ajoute la valeur à o
+      input.classList.remove("active");
+      input.setAttribute("disabled", true); // Désactive l'input
+      if (index < Input.length - 1) {
+        Input[index + 1].classList.add("active");
+        Input[index + 1].removeAttribute("disabled");
+        Input[index + 1].focus();
+      }
+      checkCode(); // Vérifie le code après chaque saisie
+    } else {
+      input.value = ""; // Réinitialiser la valeur si non valide
+    }
+  });
+});
+
+// Initialisation
+Input[0].classList.add("active");
+Input[0].removeAttribute("disabled");
+Input[0].focus();

@@ -17,13 +17,13 @@ if ( isset($data)) {
 
     if(!$test){
      createUser($o, $mat, $email, $username, $niv, $password, $fil, $code);
-     echo json_encode(array("err"=> false,"msg"=> "Votre compte a été crée avec success"));
      $_SESSION['wa']=true;
      $_SESSION["name"]=$username;
      $_SESSION["mat"]=$mat;
      $_SESSION["email"]=$email;
      $_SESSION["code"]=$code;
      $_SESSION["pp"]="admin.jpg"; // Cas ou il s'agit d'un enseignant
+     echo json_encode(array("err"=> false,"msg"=> "Votre compte a été crée avec success"));
     }else{
         echo json_encode(array("err"=> true,"msg"=> "Cet utilisateur existe deja"));
     }

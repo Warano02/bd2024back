@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["wa"])) {
-  header("location:./log/signin.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
