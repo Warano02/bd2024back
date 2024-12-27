@@ -1,3 +1,5 @@
+import { Aurl } from "../../backend/security/api.js";
+
 let champ = document.getElementById("email");
 let code = sessionStorage.getItem("code");
 let Form=JSON.parse(sessionStorage.getItem("data"))
@@ -17,7 +19,7 @@ const t = setInterval(() => {
         if (t.status === 200) {
           const tt = t.responseText;
           if (!tt.err) {
-            let url = `http://localhost:3000/post/welcome2?email=${Form.email}&name=${nom}`;
+            let url = `${Aurl}/post/welcome2?email=${Form.email}&name=${nom}`;
 
             // Envoi du message de bienvenue 
             const xhr = new XMLHttpRequest();

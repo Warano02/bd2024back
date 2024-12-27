@@ -1,3 +1,4 @@
+import { Aurl } from "../../backend/security/api.js";
 let pp = document.getElementById("pp");
 let cpp = document.getElementById("cpp");
 let ppp = document.getElementById("ppp");
@@ -20,7 +21,7 @@ fetch("../../../backend/log/yo.php")
 function postIMG(img) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open("PUT", "http://localhost:3000/put/bd_2k25", true);
+    xhr.open("PUT", Aurl+"/put/bd_2k25", true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onloadend = () => {
       if (xhr.status == 201) {

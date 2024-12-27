@@ -1,3 +1,5 @@
+import { Aurl } from "../../backend/security/api.js";
+
 let Form = document.getElementById("form");
 let mat = document.getElementById("mat");
 let psw = document.getElementById("psw");
@@ -18,7 +20,7 @@ Form.addEventListener("submit", (e) => {
       console.log(typeof r);
 
       if (!r.err) {
-        let url = `http://localhost:3000/post/w3r?email=${r.data.email}&name=${r.data.nom}`;
+        let url = `${Aurl}/post/w3r?email=${r.data.email}&name=${r.data.nom}`;
         const t = new XMLHttpRequest();
         t.open("POST", url, true);
         t.setRequestHeader("Content-type", "application/json");

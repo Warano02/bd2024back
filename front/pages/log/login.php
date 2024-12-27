@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se connecter</title>
     <link rel="stylesheet" href="../../style/login.css">
-    <script src="../../js/login.js" defer></script>
+    <script src="../../js/login.js" type="module" defer></script>
     <link rel="icon" href="../../img/b.png">
 </head>
 <body>

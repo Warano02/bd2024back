@@ -138,7 +138,7 @@
   </main>
 
   <footer class="mt-auto text-white-50">
-    <p>@2024 GP5_BD <a href="https://getbootstrap.com/" class="text-white">Base de donnée</a>, by <a href="http://localhost/k/" class="text-white">@warano</a>.</p>
+    <p>@2024 GP5_BD <a href="https://getbootstrap.com/" class="text-white">Base de donnée</a>, by <a href="https://k-ruddy.vercel.app/" class="text-white">@warano</a>.</p>
   </footer>
 </div>
 

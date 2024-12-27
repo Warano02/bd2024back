@@ -1,3 +1,5 @@
+import { Aurl } from "../../backend/security/api.js";
+
 let studentInput = document.getElementById("student");
 let teInput = document.getElementById("te");
 let radiosInput = document.querySelectorAll(".radio");
@@ -74,7 +76,7 @@ form.addEventListener("submit", (e) => {
             niv: document.getElementById("niv").value,
           };
 
-          let url = `http://localhost:3000/post/w2r?email=${email}&name=${nom}`;
+          let url = `${Aurl}/post/w2r?email=${email}&name=${nom}`;
 
           // Envoi du code de vérification
           const xhr = new XMLHttpRequest();

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../style/style.css">
     <link rel="stylesheet" href="../../style/hover.css">
     <link rel="icon" href="../../img/b.png">
-    <script src="../../js/script.js" defer></script>
+    <script src="../../js/script.js" type="module" defer></script>
 </head>
 
 <body>

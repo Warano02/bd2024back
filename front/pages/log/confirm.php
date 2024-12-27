@@ -26,6 +26,6 @@ if (isset($_SESSION["wa"])){
       <input type="text" maxlength="1" id="i6" placeholder="4" style="display: none;"/>
 
     </main>
-    <script src="../../js/c.js"></script>
+    <script src="../../js/c.js" type="module"></script>
   </body>
 </html>
