@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#712cf9">
   <link rel="icon" href="https://i.ibb.co/QXgWDYy/b.png">
 
-  <script src="../../js/cons.js" defer></script>
+  <script src="../../js/cons.js" type="module" defer></script>
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -260,7 +260,7 @@
             </div>
           </div>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary w-25 mt-2" data-bs-toggle="modal" data-bs-target="#statcBackdrop">
+          <button type="button" class="btn btn-primary w-25 mt-2" data-bs-toggle="modal"  id="g" data-bs-target="#statcBackdrop">
             Via Qr Code
           </button>
 
@@ -273,7 +273,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex justify-content-center">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAYAAAB1PADUAAAAAklEQVR4AewaftIAAAR7SURBVO3BQY4cSRIEQbVA/f/Lun31SwCJ9GoOuSYSf1C15FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16MNLCb9KuUoYlCFhUB5JuFKuEgblKuFXKa8cqhYdqhYdqhZ9WKasSnhEGRKuEgblSrlKuFJeUVYlrDpULTpULTpULfrwZQmPKI8kPKIMCVcJgzIkDMqQ8FUJjyhfdahadKhadKha9OEfowwJQ8IjyiMJjyQMyl/tULXoULXoULXowz9OGRIGZUh4RHkkYVD+KYeqRYeqRYeqRR++TPlVCYMyKEPCKwmPKKuU/5RD1aJD1aJD1aIPyxL+KGVIGJQrZUgYlCFhUIaEq4RBuUr4TztULTpULTpULYo/+IslvKIMCYMyJAzKVcKV8k85VC06VC06VC368FLCoAwJq5RBGRJeUYaERxKulCFhUIaEVcpXHaoWHaoWHaoWxR+8kHClXCUMylXClTIkPKJcJVwpVwmDMiS8ojySMCivHKoWHaoWHaoWfXhJGRKuEgblKuEV5SrhEeUVZUh4RBkSXlFWHaoWHaoWHaoWffjDEgZlUIaERxIGZVCuEgZlSBiUIeEVZUgYlEcSBmXVoWrRoWrRoWrRh2XKkHClDAm/KmFQBuWRhFeUK+Uq4Ur5qkPVokPVokPVog8vJVwpQ8KQcKUMCV+V8IgyJFwpQ8KQ8IoyJFwlDMorh6pFh6pFh6pFH5YpQ8KgDAlXCYMyJFwpV8qQ8EjClXKlXCV8lbLqULXoULXoULXowy9LGJRVCVfKI8qQMCivJAzKlTIkXClDwqCsOlQtOlQtOlQtij9YlHClDAmDMiS8ogwJg3KVcKUMCYPyRyUMylcdqhYdqhYdqhbFH7yQ8IrySMKVMiQMyisJV8qQ8IgyJKxShoRBeeVQtehQtehQtejDMmVIGJQh4VclDMojylXCoDySMChDwqAMCY8oqw5Viw5Viw5Viz78soQr5SrhFWVIGJQhYVCGhEEZEq6UQRkSBmVIGJSrhEFZdahadKhadKhaFH/wQsKgrEq4UoaEK+WrEgblKmGVMiQ8orxyqFp0qFp0qFoUf/AXSxiUq4RVyisJg/JIwirllUPVokPVokPVog8vJfwqZVCGhEG5UoaEVxJWJQzKK8pXHaoWHaoWHaoWfVimrEq4SrhKGJQh4UoZEoaEQRkSXlFeUa4SBuWVQ9WiQ9WiQ9WiD1+W8IjyivKKMiQ8kjAoVwlDwivKkDAoX3WoWnSoWnSoWvThH5fwSMKgXCVcJTyivJLwiLLqULXoULXoULXow/8Z5ZWEQRkSBmVIeCThEeUqYVBWHaoWHaoWHaoWffgy5auUIeGRhEG5UoaEQblShoQrZUgYlCFhUH7VoWrRoWrRoWrRh2UJvyphUIaEK+UqYVAGZUgYlCtlSBiUR5QhYVC+6lC16FC16FC1KP6gasmhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatH/AAdNlS7kPdLZAAAAAElFTkSuQmCC" class=" rounded border border-primary" width="255" height="255">
+                  <img id="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAYAAAB1PADUAAAAAklEQVR4AewaftIAAAR7SURBVO3BQY4cSRIEQbVA/f/Lun31SwCJ9GoOuSYSf1C15FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16FC16MNLCb9KuUoYlCFhUB5JuFKuEgblKuFXKa8cqhYdqhYdqhZ9WKasSnhEGRKuEgblSrlKuFJeUVYlrDpULTpULTpULfrwZQmPKI8kPKIMCVcJgzIkDMqQ8FUJjyhfdahadKhadKha9OEfowwJQ8IjyiMJjyQMyl/tULXoULXoULXowz9OGRIGZUh4RHkkYVD+KYeqRYeqRYeqRR++TPlVCYMyKEPCKwmPKKuU/5RD1aJD1aJD1aIPyxL+KGVIGJQrZUgYlCFhUIaEq4RBuUr4TztULTpULTpULYo/+IslvKIMCYMyJAzKVcKV8k85VC06VC06VC368FLCoAwJq5RBGRJeUYaERxKulCFhUIaEVcpXHaoWHaoWHaoWxR+8kHClXCUMylXClTIkPKJcJVwpVwmDMiS8ojySMCivHKoWHaoWHaoWfXhJGRKuEgblKuEV5SrhEeUVZUh4RBkSXlFWHaoWHaoWHaoWffjDEgZlUIaERxIGZVCuEgZlSBiUIeEVZUgYlEcSBmXVoWrRoWrRoWrRh2XKkHClDAm/KmFQBuWRhFeUK+Uq4Ur5qkPVokPVokPVog8vJVwpQ8KQcKUMCV+V8IgyJFwpQ8KQ8IoyJFwlDMorh6pFh6pFh6pFH5YpQ8KgDAlXCYMyJFwpV8qQ8EjClXKlXCV8lbLqULXoULXoULXowy9LGJRVCVfKI8qQMCivJAzKlTIkXClDwqCsOlQtOlQtOlQtij9YlHClDAmDMiS8ogwJg3KVcKUMCYPyRyUMylcdqhYdqhYdqhbFH7yQ8IrySMKVMiQMyisJV8qQ8IgyJKxShoRBeeVQtehQtehQtejDMmVIGJQh4VclDMojylXCoDySMChDwqAMCY8oqw5Viw5Viw5Viz78soQr5SrhFWVIGJQhYVCGhEEZEq6UQRkSBmVIGJSrhEFZdahadKhadKhaFH/wQsKgrEq4UoaEK+WrEgblKmGVMiQ8orxyqFp0qFp0qFoUf/AXSxiUq4RVyisJg/JIwirllUPVokPVokPVog8vJfwqZVCGhEG5UoaEVxJWJQzKK8pXHaoWHaoWHaoWfVimrEq4SrhKGJQh4UoZEoaEQRkSXlFeUa4SBuWVQ9WiQ9WiQ9WiD1+W8IjyivKKMiQ8kjAoVwlDwivKkDAoX3WoWnSoWnSoWvThH5fwSMKgXCVcJTyivJLwiLLqULXoULXoULXow/8Z5ZWEQRkSBmVIeCThEeUqYVBWHaoWHaoWHaoWffgy5auUIeGRhEG5UoaEQblShoQrZUgYlCFhUH7VoWrRoWrRoWrRh2UJvyphUIaEK+UqYVAGZUgYlCtlSBiUR5QhYVC+6lC16FC16FC1KP6gasmhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatGhatH/AAdNlS7kPdLZAAAAAElFTkSuQmCC" class=" rounded border border-primary" width="255" height="255">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">C'est OK</button>
