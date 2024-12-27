@@ -1,11 +1,17 @@
+let isA = sessionStorage.getItem("a");
+
+if (!isA) {
+  window.location.href = "../";
+}
+
 let table = document.getElementById("l52e");
 
 function generateRow(id, date, objet, statut) {
-  let r
-  
+  let r;
+
   switch (statut) {
     case "r":
-      r = ` <td><span class="badge badge-warning text-danger"><i class="bi bi-x-circle-fill"></i> Rejeter</span></td>
+      r = `<td><span class="badge badge-warning text-danger"><i class="bi bi-x-circle-fill"></i> Rejeter</span></td>
                   <td>
                       <button class="btn btn-warning btn-sm dupli g" data-id="${id}"> <i class="bi bi-repeat"></i> Revoir le statut</button>
               </td>`;
@@ -18,10 +24,10 @@ function generateRow(id, date, objet, statut) {
       break;
 
     default:
-      r = ` <td><span class="badge badge-warning text-secondary"><i class="bi bi-pin"></i> En attente</span></td>
+      r = `<td><span class="badge badge-warning text-secondary"><i class="bi bi-pin"></i> En attente</span></td>
               <td>
                   <button class="btn btn-success btn-sm dupli g" data-id="${id}">Traiter</button>
-               </td>`;
+              </td>`;
       break;
   }
   return `
@@ -35,69 +41,62 @@ function generateRow(id, date, objet, statut) {
 }
 
 function insertIntoDom(data) {
-  if (data.length == 0) {
-   
+  table.innerHTML = ''; // Nettoyer le tableau avant d'insérer des données
+
+  if (data.length === 0) {
     table.insertAdjacentHTML(
       "beforeend",
       `<tr>
-      <td>
-          <div class="spinner-border text-primary d-flex justify-content-center" role="status">
+      <td colspan="5" class="text-center">
+          <div class="spinner-border text-primary" role="status">
               <span class="visually-hidden">Loading...</span>
           </div>
       </td>
-      <td>
-          <div class="spinner-border text-success" role="status">
-              <span class="visually-hidden">Loading...</span>
-          </div>
-      </td>
-      <td>
-          <div class="spinner-border text-danger d-flex justify-content-center" role="status">
-              <span class="visually-hidden">Loading...</span>
-          </div>
-      </td>
-      <td>
-          <div class="spinner-border text-warning d-flex justify-content-center" role="status">
-              <span class="visually-hidden">Loading...</span>
-          </div>
-      </td>
-      <td>
-          <div class="spinner-border text-info d-flex justify-content-center" role="status">
-              <span class="visually-hidden">Loading...</span>
-          </div>
-      </td>
-      
     </tr>`
     );
   } else {
-    let f = "";
+    let rows = ""; // Utiliser une variable locale pour stocker les lignes
     data.forEach((element) => {
-      console.log(element.statut);
-      
-      const e = generateRow(
+      const row = generateRow(
         element.un_id,
         element.date,
         element.objet,
         element.statut
       );
-      f += e;
+      rows += row; // Concaténer les lignes
     });
-    table.innerHTML = f;
+    table.innerHTML = rows; // Insérer toutes les lignes en une seule fois
   }
+  addEventListeners(); // Ajouter les écouteurs d'événements après l'insertion
+}
+
+function addEventListeners() {
+  let buttons = document.querySelectorAll(".g");
+  buttons.forEach(element => {
+    element.addEventListener("click", () => {
+      sessionStorage.setItem("un_id", element.getAttribute("data-id"));
+      window.location.href = "./view.php";
+    });
+  });
 }
 
 fetch("../../../backend/log/main.php")
-  .then((t) => {
-    return t.json();
+  .then((response) => {
+    return response.json();
   })
-  .then((r) => {
-    insertIntoDom(r);
-    let traiter = r.sort((a) => a.statut === "t");
-    let refuse = r.sort((a) => a.statut === "r");
-    let encoure = r.sort((a) => a.statut === "e");
+  .then((data) => {
+    insertIntoDom(data);
+    let traiter = data.filter((a) => a.statut == "t");
+    let refuse = data.filter((a) => a.statut == "r");
+    let encoure = data.filter((a) => a.statut == "e");
+    
+    document.getElementById("t1").textContent = encoure.length;
+    document.getElementById("t2").textContent = traiter.length;
+    document.getElementById("t3").textContent = refuse.length;
+    document.getElementById("t").textContent = encoure.length + refuse.length + traiter.length;
+    
     let select = document.getElementById("select");
     select.addEventListener("change", () => {
-      console.log(select.value);
-      
       switch (select.value) {
         case "t":
           insertIntoDom(traiter);
@@ -109,17 +108,8 @@ fetch("../../../backend/log/main.php")
           insertIntoDom(encoure);
           break;
         default:
-          insertIntoDom(r);
+          insertIntoDom(data);
           break;
       }
-    });
-
-    let su=document.querySelectorAll(".g")
-
-    su.forEach(element => {
-      element.addEventListener("click",()=>{
-        sessionStorage.setItem("un_id",element.getAttribute("data-id"))
-        window.location.href="./view.php"
-      })
     });
   });

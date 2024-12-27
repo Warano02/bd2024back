@@ -17,7 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous" defer></script>
     <meta name="theme-color" content="#712cf9">
     <link rel="stylesheet" href="../../style/hover.css">
-    <script src="../js/main.js" defer></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
@@ -133,14 +132,14 @@
         <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;">
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="./" class="nav-link  py-3 border-bottom rounded-0" aria-current="page" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
                         <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Home">
                             <use xlink:href="#home" />
                         </svg>
                     </a>
                 </li>
                 <li>
-                    <a href="./prod.php" class="nav-link py-3 border-bottom rounded-0" title="Products" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="#" class="nav-link py-3 active border-bottom rounded-0" title="Products" data-bs-toggle="tooltip" data-bs-placement="right">
                         <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Products">
                             <use xlink:href="#grid" />
                         </svg>
@@ -159,7 +158,8 @@
                     <img src="../../img/9.png" width="24" height="24" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small shadow">
-                    <li><a class="dropdown-item" href="./prod.php">Autre Service</a></li>
+                    <li><a class="dropdown-item" href="./na.php">Nouveau Admin</a></li>
+                    <li><a class="dropdown-item" href="./set.php">Settings</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
@@ -169,69 +169,38 @@
         </div>
 
         <div class="b-example-divider b-example-vr"></div>
+        <div class="container">
 
-        <div class="container text-center">
-            <div class="row">
-                <div class="position-relative hvr-sweep-to-bottom col shadow p-3 m-2 bg-body-tertiary rounded w-35  border border-0  hover-background-danger" style="cursor:pointer;height:150px;margin-top:1em;flex-wrap:nowrap;display:flex;justify-content:center;align-items:center;gap:1em;">
-                    <div class=" d-flex flex-column" style="width: 90px;height:100%;">
-                        <h1 style="font-weight: 500;font-size: 2.5rem;color:#2a2185;" id="t1">100</h1>
-                        <span style="color:#999;">Nouvelles Requêtes</span>
-                    </div>
-                    <img src="../../img/new.svg" class="img-fluide rounded" style="width:70px;height:70px;object-fit:cover;">
+            <div class="p-4 p-md-5 mb-4 h-26 rounded text-body-emphasis bg-body-secondary">
+                <div class="col-lg-6 px-0">
+                    <h1 class="display-4 fst-italic">Autre services </h1>
+                    <p class="lead my-3">A GP5_BD, nous mettons a votre disposition d'autre services qui pourrons vous être utiles tout aux long de l'attente d'une réponse a votre requête et meme après cela.</p>
                 </div>
-                <div class="position-relative  col hvr-rectangle-out shadow p-3 m-2 bg-body-tertiary rounded w-35  border border-0  hover-background-danger" style="cursor:pointer;height:150px;margin-top:1em;flex-wrap:nowrap;display:flex;justify-content:center;align-items:center;gap:1em;">
-                    <div class=" d-flex flex-column" style="width: 90px;height:100%;">
-                        <h1 style="font-weight: 500;font-size: 2.5rem;color:#2a2185;" id="t2">100</h1>
-                        <span style="color:#999;">Requêtes Traité</span>
-                    </div>
-                    <img src="../../img/good.svg" class="img-fluide rounded" style="width:70px;height:70px;object-fit:cover;">
-                </div>
-                <div class="position-relative  col hvr-bounce-to-top shadow p-3 m-2 bg-body-tertiary rounded w-35  border border-0  hover-background-danger" style="cursor:pointer;height:150px;margin-top:1em;flex-wrap:nowrap;display:flex;justify-content:center;align-items:center;gap:1em;">
-                    <div class=" d-flex flex-column" style="width: 90px;height:100%;">
-                        <h1 style="font-weight: 500;font-size: 2.5rem;color:#2a2185;" id="t3">100</h1>
-                        <span style="color:#999;">Requêtes Refusé</span>
-                    </div>
-                    <img src="../../img/false.svg" class="img-fluide rounded" style="width:70px;height:70px;object-fit:cover;">
-                </div>
-                <div class="position-relative  col hvr-shutter-out-horizontal shadow p-3 m-2 bg-body-tertiary rounded w-35  border border-0  hover-background-danger" style="cursor:pointer;height:150px;margin-top:1em;flex-wrap:nowrap;display:flex;justify-content:center;align-items:center;gap:1em;">
-                    <div class=" d-flex flex-column" style="width: 90px;height:100%;">
-                        <h1 style="font-weight: 500;font-size: 2.5rem;color:#2a2185;" id="t">100</h1>
-                        <span style="color:#999;">Total</span>
-                    </div>
-                    <img src="../../img/sum.svg" class="img-fluide rounded" style="width:70px;height:70px;object-fit:cover;">
-                </div>
-
             </div>
 
-            <select class="form-select form-select-lg mb-1 mt-2" id="select" aria-label="Large select example">
-                <option selected value="ygu">Toute</option>
-                <option value="t">Traiter</option>
-                <option value="e">En attente</option>
-                <option value="n">
-                    Non fondé
-                </option>
-            </select>
-            <table class="table  table-bordered table-striped mt-1">
-                <thead>
-                    <tr>
-                        <th scope="col">Identifiant</th>
-                        <th scope="col">Date de Soumission</th>
-                        <th scope="col">Objet</th>
-                        <th scope="col">Statut</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="l52e">
-                
-                </tbody>
-            </table>
-
-
-
-
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Education</strong>
+                        <h3 class="mb-0">Success-Field</h3>
+                        <div class="mb-1 text-body-secondary">Nov 12</div>
+                        <p class="card-text mb-auto">A la quête d'une excellence académique sans faille, découvrez les derniers sujet d'examen, de Td et aussi les cours sur cette plateforme</p>
+                        <a href="http://localhost/precieux" target="_blank" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Découvrir
+                            <svg class="bi">
+                                <use xlink:href="#chevron-right" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="../../img/9.png" width="250" height="263">
+                    </div>
+                </div>
+            </div>
 
         </div>
-      
+
+
     </main>
 </body>
 

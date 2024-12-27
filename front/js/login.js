@@ -17,8 +17,7 @@ Form.addEventListener("submit", (e) => {
   xhr.onloadend = () => {
     if (xhr.status == 200) {
       let r = JSON.parse(xhr.responseText);
-      console.log(typeof r);
-
+      sessionStorage.setItem("u",true)
       if (!r.err) {
         let url = `${Aurl}/post/w3r?email=${r.data.email}&name=${r.data.nom}`;
         const t = new XMLHttpRequest();

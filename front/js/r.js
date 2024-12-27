@@ -1,3 +1,7 @@
+let isU=sessionStorage.getItem("u")
+if(!isU){
+  window.location.href="../log/sigin.php"
+}
 let textInput = document.getElementById("text");
 let outputMessage = document.querySelector("main .data p");
 let ai = document.getElementById("form2");

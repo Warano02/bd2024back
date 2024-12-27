@@ -1,4 +1,8 @@
 import { Aurl, key } from "../../backend/security/api.js";
+let isU=sessionStorage.getItem("u")
+if(!isU){
+  window.location.href="../log/sigin.php"
+}
 let pp = document.getElementById("pp");
 let cpp = document.getElementById("cpp");
 let ppp = document.getElementById("ppp");

@@ -18,11 +18,11 @@ function createUser($o, $mat, $email, $nom, $niv, $pwrd, $fil, $code)
 
     if ($o == "no") {
         $req = $access->prepare("INSERT INTO users(mat,email,nom,fil,pwd,pp,niv) VALUES (?,?,?,?,?,?,?) ");
-        $req->execute(array($mat, $email, $nom, $fil, password_hash($pwrd, PASSWORD_DEFAULT), "admin.png", $niv));
+        $req->execute(array($mat, $email, $nom, $fil, password_hash($pwrd, PASSWORD_DEFAULT), "https://i.ibb.co/4gMfWh3/PXL-20240304-151352716-PORTRAIT.jpg", $niv));
         return true;
     }else{
         $req = $access->prepare("INSERT INTO users(mat,email,nom,fil,pwd,pp,code) VALUES (?,?,?,?,?,?,?) ");
-        $req->execute(array($mat, $email, $nom, $fil,  password_hash($pwrd, PASSWORD_DEFAULT),  "admin.png", $code));
+        $req->execute(array($mat, $email, $nom, $fil,  password_hash($pwrd, PASSWORD_DEFAULT),  "https://i.ibb.co/4gMfWh3/PXL-20240304-151352716-PORTRAIT.jpg", $code));
         return true;
     }
 }

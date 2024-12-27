@@ -18,7 +18,15 @@ form.addEventListener("submit", (e) => {
       }
       return response.json();
     })
-    .then((data) => console.log(data))
+    .then((data) => {
+      if (data.err) {
+        alert("Mr vous avez entrez des informations incorrects !")
+      } else {
+        sessionStorage.setItem("a",true)
+        window.location.href="./pages/"
+      }
+    
+    })
     .catch((error) => console.error("There was a problem with the fetch operation:", error));
 });
 

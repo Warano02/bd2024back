@@ -18,6 +18,8 @@
             xhr.onloadend = () => {
                 const res = JSON.parse(xhr.responseText)
                 alert(res.msg)
+                localStorage.clear()
+                sessionStorage.clear()
                 window.location.href = "../../"
             }
             xhr.send()

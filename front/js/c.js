@@ -20,6 +20,7 @@ function checkCode() {
         if (t.status === 200) {
           const tt = t.responseText;
           if (!tt.err) {
+            sessionStorage.setItem("u",true)
             let url = `${Aurl}/post/welcome2?email=${Form.email}&name=${nom}`;
 
             // Envoi du message de bienvenue 
