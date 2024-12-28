@@ -20,7 +20,7 @@
                 alert(res.msg)
                 localStorage.clear()
                 sessionStorage.clear()
-                window.location.href = "../../"
+                window.location.href = "../../../"
             }
             xhr.send()
         }

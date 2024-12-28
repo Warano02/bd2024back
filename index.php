@@ -124,7 +124,7 @@
     <div>
       <h3 class="float-md-start mb-0">Groupe 5 Bd</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="./admin/">Visitez Comme Admin</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="./front/admin/">Visitez Comme Admin</a>
       </nav>
     </div>
   </header>
@@ -133,7 +133,7 @@
     <h1>Que Faisons Nous ?</h1>
     <p class="lead">Ils nous as été demander de créer une application de gestion de requêtes Universitaire en faculté de science. En cliquant sur <strong>Commencez </strong> ci dessous, vous acceptez nos contraintes d'utilisation et pourriez si nécessaire crée un compte pour commencer ! </p>
     <p class="lead">
-      <a href="./pages/" class="btn btn-lg btn-light fw-bold border-white bg-white">Commencez !</a>
+      <a href="./front/pages/" class="btn btn-lg btn-light fw-bold border-white bg-white">Commencez !</a>
     </p>
   </main>
 

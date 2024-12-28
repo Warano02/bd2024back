@@ -93,6 +93,36 @@
     .bd-mode-toggle .dropdown-menu .active .bi {
       display: block !important;
     }
+
+    @media (max-width: 768px) {
+      .d-flex.flex-column.flex-md-row.flex-nowrap {
+        flex-direction: column;
+      }
+
+      .d-flex.flex-column.flex-shrink-0.p-3.text-bg-dark {
+        width: 100%;
+      }
+
+      .b-example-vr {
+        display: none;
+      }
+
+      .container.bg-dark-subtle {
+        margin-top: 20px;
+      }
+
+      .figure {
+        text-align: center;
+      }
+
+      .figure-caption {
+        text-align: center !important;
+      }
+
+      .input-group {
+        width: 100% !important;
+      }
+    }
   </style>
 </head>
 
@@ -121,7 +151,7 @@
     </symbol>
   </svg>
 
-  <main class="d-flex flex-nowrap">
+  <main class="d-flex flex-column flex-md-row flex-nowrap">
     <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <svg class="bi pe-none me-2" width="40" height="32">
