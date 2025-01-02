@@ -8,6 +8,7 @@ $data = json_decode(file_get_contents("php://input"), true);
 if (isset($data)) {
     $bossa = htmlspecialchars($data["mat"]);
     $password = htmlspecialchars($data["psw"]);
+    $app = htmlspecialchars($data["app"]);
 
     if (!v($bossa)) {
         echo json_encode(array("err" => true, "msg" => "Aucun utilisateur inscrit avec le matricule " . $bossa));
@@ -16,6 +17,7 @@ if (isset($data)) {
         $d=$d[0];
         $pwrd = $d["pwd"];
         if (password_verify($password, $pwrd)) {
+            addHist($bossa,date("d/m/Y"),$app);
             $_SESSION['wa'] = true;
             $_SESSION["name"] = $d["nom"];
             $_SESSION["mat"] = $bossa;

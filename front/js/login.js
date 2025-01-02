@@ -9,6 +9,7 @@ Form.addEventListener("submit", (e) => {
   let user = {
     mat: mat.value,
     psw: psw.value,
+    app:navigator.userAgent
   };
 
   const xhr = new XMLHttpRequest();

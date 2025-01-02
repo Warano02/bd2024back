@@ -37,6 +37,15 @@ function addHist($mat,$date,$app){
     return true;
 }
 
+
+function getHist($mat){
+    require("../security/connexion.php");
+    $req=$access->prepare("SELECT * FROM his WHERE mat=?");
+    $req->execute(array($mat));
+    $data=$req->fetchAll(PDO::FETCH_ASSOC);
+    return $data;
+}
+
 // function d recuperation de donnee
 
 function fetchData($mat){

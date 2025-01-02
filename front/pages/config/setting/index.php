@@ -8,8 +8,6 @@ if (!isset($_SESSION["wa"])) {
 <html lang="fr" data-bs-theme="auto">
 
 <head>
-  <script src="/docs/5.3/assets/js/color-modes.js"></script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
@@ -21,7 +19,7 @@ if (!isset($_SESSION["wa"])) {
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous" defer></script>
   <meta name="theme-color" content="#712cf9">
-  <script src="../../js/config.hr.js" defer></script>
+  <script src="../../../js/config.js" defer></script>
 
   <style>
     .bd-placeholder-img {
@@ -101,10 +99,6 @@ if (!isset($_SESSION["wa"])) {
       display: block !important;
     }
   </style>
-
-
-  <!-- Custom styles for this template -->
-  <link href="sidebars.css" rel="stylesheet">
 </head>
 
 <body>
@@ -136,8 +130,6 @@ if (!isset($_SESSION["wa"])) {
   </svg>
 
   <main class="d-flex flex-nowrap">
-    <h1 class="visually-hidden">Sidebars examples</h1>
-
     <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <svg class="bi pe-none me-2" width="40" height="32">
@@ -214,14 +206,25 @@ if (!isset($_SESSION["wa"])) {
 
 
     <div class="container">
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">His. Connexion</a></li>
-        <li class="nav-item"><a href="../" class="nav-link">Profil</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-      </ul>
-    </header>
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">His. Connexion</a></li>
+          <li class="nav-item"><a href="../" class="nav-link">Profil</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+      </header>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Appareil</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider" id="hist">
+
+        </tbody>
+      </table>
     </div>
 
   </main>
