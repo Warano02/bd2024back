@@ -207,32 +207,32 @@ if (!isset($_SESSION["wa"])) {
       <details class="bg-light border rounded p-3 mb-3">
         <summary class="font-weight-bold">Requête sur la publication de notes</summary>
         <p>C'est un type de requête destiné a la publication des notes non affiché.</p>
-        <button class="btn btn-success mb-3 fgh" data-objet="Publication de note">Détails du produit</button>
+        <button class="btn btn-success mb-3 fgh" data-objet="Publication de note">Effectuer</button>
       </details>
 
       <details class="bg-light border rounded p-3 mb-3">
         <summary class="font-weight-bold">Suspension du Matricule</summary>
         <p>Il surviens régulièrement lors de l'obtention d'un concours, par un manque de moyens financier ou encore par demission que l'on veut bloquer son matricule pour une durée temporaire . Ce type de requête vous est destiné</p>
-        <button class="btn btn-success mb-3 fgh" data-objet="Suspension de matricule">Détails du produit</button>
+        <button class="btn btn-success mb-3 fgh" data-objet="Suspension de matricule">Effectuer</button>
       </details>
 
       <details class="bg-light border rounded p-3 mb-3">
         <summary class="font-weight-bold">Demande de transfert </summary>
         <p>Suite a un démanagement ou changement brusque de ville par exemple, il convient d'avoir un transfert pour continuer dans une autre université. Ce type de requête répond donc a cette préoccupation .</p>
-        <button class="btn btn-success mb-3 fgh" data-objet="Demande de transfert">Détails du produit</button>
+        <button class="btn btn-success mb-3 fgh" data-objet="Demande de transfert">Effectuer</button>
 
       </details>
 
       <details class="bg-light border rounded p-3 mb-3">
         <summary class="font-weight-bold">Erreur d'enregistrement</summary>
         <p>Lors de votre inscription, vous avez peut être victime d'ue erreur de saisie d'où d'enregistrement. Ce type de requete vous est recommander ! </p>
-        <button class="btn btn-success mb-3 fgh" data-objet="Erreur d'enregistrement">Détails du produit</button>
+        <button class="btn btn-success mb-3 fgh" data-objet="Erreur d'enregistrement">Effectuer</button>
       </details>
 
       <details class="bg-light border rounded p-3 mb-3">
         <summary class="font-weight-bold">Admission au rattrapage </summary>
         <p>C'est une requête soumise pour une admission a la session de rattrapage dû a une absence</p>
-        <button class="btn btn-success mb-3 fgh" data-objet="Admission au rattrapage">Détails du produit</button>
+        <button class="btn btn-success mb-3 fgh" data-objet="Admission au rattrapage">Effectuer</button>
       </details>
 
       <a href="./config/r.php" class="btn btn-primary mt-2">Autre type de requêtes</a>

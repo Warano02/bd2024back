@@ -147,7 +147,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link py-3 border-bottom rounded-0" title="Contactez Nous" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="../../pages/Faq/" class="nav-link py-3 border-bottom rounded-0" title="Contactez Nous" data-bs-toggle="tooltip" data-bs-placement="right">
                         <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Customers">
                             <use xlink:href="#table" />
                         </svg>

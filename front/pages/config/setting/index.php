@@ -210,8 +210,7 @@ if (!isset($_SESSION["wa"])) {
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">His. Connexion</a></li>
           <li class="nav-item"><a href="../" class="nav-link">Profil</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="../../Faq/" class="nav-link">FAQs</a></li>
         </ul>
       </header>
       <table class="table">
