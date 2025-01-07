@@ -101,7 +101,7 @@ function generateQrCode() {
   const options = {
     headers: { "X-API_KEY": key },
   };
-  fetch(`${Aurl}/get/warano-qr-code?url=${Aurl.replace(/:3000/g,"/bd_20224")}`, options)
+  fetch(`${Aurl}/get/warano-qr-code?url=https://www.gp5bd.wuaze.com`, options)
     .then((a) => {
       return a.json();
     })
